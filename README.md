@@ -42,9 +42,9 @@ La fonction hydrate() remplit autant les inputs des formulaires que les div, spa
 |----|---|--------|
 |![](./doc/01.png)|![](./doc/02.png)|![](./doc/03.png)|
 
-##Utilisation
+## Utilisation
 
-###Ø ARGUMENT  
+### Ø ARGUMENT  
 la fonction n'accepte pas d'argument
 
 ### MISE EN PLACE POUR LE PROJET
@@ -72,7 +72,7 @@ hydrate() cherche les valeurs stockées dans un objet de type jSON qui soit se t
 
 On ne préfixe pas la déclaration par let ou var, puisqu'on ajoute une entrée dans un array existant.
 
-#####exemple :
+##### exemple :
 
 ```
 sources.client = {

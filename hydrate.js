@@ -39,28 +39,28 @@ function hydrate() {
         break;
 
       case "radio":
-        if (element.value != innerContent) {
+        if (element.value != innerContent || +element.value != innerContent) {
           // si l'input ne correspond pas à une valeur reçue, cacher le radio ET son label
           element.removeAttribute("checked");
-          element.parentElement.classList.add("d-none");
         } else {
           // si l'input correspond à une valeur reçue, marque l'input comme étant sélectionné.
           element.setAttribute("checked", "checked");
-          element.parentElement.classList.remove("d-none");
-          element.classList.add("d-none");
         }
         break;
+
       case "checkbox":
-        if (innerContent != element.value || innerContent != +element.value) {
-          // si la valeur de la checkbox ne correspond pas à une valeur reçue, cacher la checkbox ET son label
-          element.removeAttribute("checked");
-          element.parentElement.classList.add("d-none");
-        } else {
+        if (
+          innerContent.includes(element.value) ||
+          innerContent.includes(+element.value)
+        ) {
           // si la valeur de la checkbox correspond à une valeur reçue, afficher le label concerné
           element.setAttribute("checked", "checked");
-          element.parentElement.classList.remove("d-none");
+        } else {
+          // si la valeur de la checkbox ne correspond pas à une valeur reçue, cacher la checkbox ET son label
+          element.removeAttribute("checked");
         }
         break;
+
       default:
         // pour les autres éléments (div, p, span...) , insérer le nouveau contenu.
         element.innerHTML = innerContent;
@@ -72,18 +72,3 @@ function hydrate() {
     }
   });
 }
-
-///  function renderIf() {
-///   const targetElements = document.querySelectorAll(
-///     "[data-if]:not([data-if=''])"
-///   );
-///
-///   targetElements.forEach((element) => {
-///     const renderCondition = element.dataset.if;
-///     if (!renderCondition && !element.classList.contains("d-none")) {
-///       element.classList.add("d-none");
-///     } else if (renderCondition) {
-///       element.classList.remove("d-none");
-///     }
-///   });
-///  }

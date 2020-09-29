@@ -56,7 +56,7 @@ Il sert à recueillir les différents jSON reçus après les requêtes au serveu
 
         let sources = [];
 
-1. Appeler hydrate.js dans l'en-tête du html.```<script src="js/hydrate.js" defer></script>```. hydrate.js doit être appelé avant es appels aux fichiers js traitant on contenant les jSON.
+1. Appeler hydrate.js dans l'en-tête du html.```<script src="js/hydrate.js" defer></script>```. hydrate.js doit être appelé avant les appels aux fichiers js traitant on contenant les jSON.
 
 1. La fonction doit être invoquée :
 

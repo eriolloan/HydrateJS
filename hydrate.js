@@ -13,6 +13,21 @@ function parseSourceString(sDataInner) {
   return inner;
 }
 
+function hydrateShowUnless() {}
+
+function hydrateShowIf() {
+  const targetElements = document.querySelectorAll(
+    "[data-if]:not([data-if=''])"
+  );
+
+  targetElements.forEach((element) => {
+    const evaluator = splitHydrationString(element.dataset.if);
+
+    // value that should match the evaluator to warrant showing the element
+    const value = sources[inner.source][inner.var];
+  });
+}
+
 function hydrate() {
   //  select all elements with a non-empty "data-inner" attribute
   const targetElements = document.querySelectorAll(
